@@ -10,7 +10,7 @@ public class Lexema {
 
 	@Override
 	public String toString() {
-		return "Lexema [token=" + token + ", valor=" + valor + "]";
+		return "Lexema [token=" + token + ", valor=" + valor + "]\n";
 	}
 	
 	

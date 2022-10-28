@@ -3,7 +3,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		//Codigo fuente
-		String fuente = "((x[";
+		String fuente = "if ((5 >> 10)) begin: mario = fact((4)) end/*";
 		//String fuente = "if ((xc [";
 		//Limpiar espacios
 		fuente = fuente.replaceAll("\\s", "");
