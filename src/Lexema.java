@@ -1,8 +1,8 @@
 
 public class Lexema {
-	
+
 	private String token, valor;
-	
+
 	public Lexema(String token, String valor) {
 		this.token = token;
 		this.valor = valor;
@@ -12,7 +12,5 @@ public class Lexema {
 	public String toString() {
 		return "Lexema [token=" + token + ", valor=" + valor + "]\n";
 	}
-	
-	
 
 }

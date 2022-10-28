@@ -94,35 +94,53 @@ public class Lexico {
 			"elseif", "else", "while", "for", "into", "do", "printing", "inputing", "fact", "pow", "absolute",
 			"minimal", "maximal", "range", "or", "and" };
 
+	
+	/**
+	 * Metodo encargado de analizar el codigo fuente, y detectar los estados finales.
+	 * @param codigoFuente
+	 */
 	void analizar(String codigoFuente) {
+		// Leer codigo fuente caracter por caracter mientras el indice actual no sea igual a la longitud del codigo fuente, es decir aun no hallamos acabado de leer el codigo fuente
 		while (indice != (codigoFuente.length())) {
-			// Caracter actual
+			// Caracter actual del codigo fuente
 			char actual = codigoFuente.charAt(indice);
 			// Recorrer matriz de estados
 			for (int x = 1; x < matrizEstados[0].length; x++) {
 				if (String.valueOf(actual).matches(matrizEstados[0][x])) {
-					
+					// Preguntar si nos encontramos en un estado final, si si lo estamos, quiere decir que hemos detectado el fin de algo significativo, o sea un lexema
 					if (estado >= 1000) {
+						// Restar el indice de la lectura del codigo fuente a -2, para no perder simbolos por leer
 						indice -= 2;
+						// Detectar lexema, o sea algo significativo (numero, palabra clave, operador, signo, etc)
 						detectarLexema(estado);
+						// Como hemos llegado a un estado final, es requerido empezar desde el estado 0 de nuevo, para poder encontrar otro lexema
 						estado = 0;
+						// Reiniciar el string que nos almacena el valor de cada lexema, esto es el valor significativo(numero, palabra clave, operador, signo, etc)
 						valor = "";
+						// Como ya encontramos un lexema, no es necesario seguir probando con los demas simbolos restantes de la matriz
 						break;
 					}
+					// De no ser un estado final seguir encontrado el proximo estado hasta encontrar algo significativo, o sea un lexema
 					estado = Integer.parseInt(matrizEstados[estado + 1][x]);
+					// Concatenar el caracter actual a lo que podria ser nuestro valor significativo
 					valor += actual;
+					// Al haber coincidido con un simbolo de la matriz, no es necesario seguir comparando el caracter actual con los demas simbolos, esto para mejorar el rendimiento
 					break;
 				}
 			}
+			// Movernos al caracter siguiente sumando 1 al indice actual
 			indice++;
 		}
 	}
 
+	/**
+	 * Metodo encargado de agregar los lexemas sean palabras clave, numeros, operadores, etc.
+	 * @param estado Estado a consultar
+	 */
 	void detectarLexema(int estado) {
 		String palabra = valor.substring(0, valor.length() - 1);
 		switch (estado) {
-		// Si es una palabra comprobar que exista en la lista, de lo contrario sera una
-		// variable
+		// Si es una palabra comprobar que sea una palabra clave que exista en la lista, de lo contrario sera una variable/identificador
 		case 1000:
 			if (Arrays.asList(palabrasClave).contains(palabra)) {
 				lexemas.add(new Lexema("Palabra reservada", palabra));
@@ -130,6 +148,9 @@ public class Lexico {
 			}
 
 			lexemas.add(new Lexema("Identificador", palabra));
+			break;
+		case 1006: case 1014:case 1015:case 1016:
+			lexemas.add(new Lexema("Operador", palabra));
 			break;
 		case 1028:
 			lexemas.add(new Lexema("Numero", palabra));
