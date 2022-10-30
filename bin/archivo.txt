@@ -1,7 +1,5 @@
 //Esto es un comentario del anio 2022 de 1 linea, tambien se aceptan commas//
 
-
-
 /*Comentario de multiples lineas, el simbolo denota el final del codigo
 fuente, por lo tanto es requerido para hacer que funcione correctamente la lectura
 y no se pierdan simbolos* 
@@ -9,7 +7,9 @@ y no se pierdan simbolos*
 //Declaracion de variables//
 number edad := 22;
 decimal pi := 3.1416;
+string nombre := 'mario';
 
+//Ejemplo de una condicional//
 if (((41e233 + 323.134442) << 10.54)) 
 	begin 
 		number mario = fact((4)); 
@@ -17,15 +17,18 @@ if (((41e233 + 323.134442) << 10.54))
 		returning true;
 	end 
 	
+/*Ejemplo de una funcion tipo number con
+parametros, ademas de que regresar un tipo number llamado suma*	
 number function sumar[x,y] 
 	begin
 		number suma = (x + y);
 		returning suma;
 	end
 	
+//Ejemplo de otra funcion llamada potencia regresa decimal y se usa pow//
 number function potencia[numero, potencia] 
 	begin
-		resultado = pow((numero, potencia));
+		number resultado = pow((numero, potencia));
 		returning resultado;
 	end
 	

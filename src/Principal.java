@@ -34,7 +34,7 @@ public class Principal {
 		codigoFuente = codigoFuente.replaceAll("\\s", "");
 		// Remover comentarios simples y multiples
 		codigoFuente = codigoFuente.replaceAll("([\\/][\\/][a-zA-z0-9,\"]*[\\/][\\/])|([\\/][*][a-zA-z0-9,\"]*[*])", "");		//Imprimir codigo codigoFuente
-		System.out.println(codigoFuente);
+		System.out.println(codigoFuente + "\n");
 		// Instanciar clase lexico
 		Lexico lexico = new Lexico();
 		// Analizar codigo codigoFuente
