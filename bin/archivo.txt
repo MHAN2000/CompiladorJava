@@ -1,0 +1,32 @@
+//Esto es un comentario del anio 2022 de 1 linea, tambien se aceptan commas//
+
+
+
+/*Comentario de multiples lineas, el simbolo denota el final del codigo
+fuente, por lo tanto es requerido para hacer que funcione correctamente la lectura
+y no se pierdan simbolos* 
+
+//Declaracion de variables//
+number edad := 22;
+decimal pi := 3.1416;
+
+if (((41e233 + 323.134442) << 10.54)) 
+	begin 
+		number mario = fact((4)); 
+		number almaguer = pow((4,2)); 
+		returning true;
+	end 
+	
+number function sumar[x,y] 
+	begin
+		number suma = (x + y);
+		returning suma;
+	end
+	
+number function potencia[numero, potencia] 
+	begin
+		resultado = pow((numero, potencia));
+		returning resultado;
+	end
+	
+//Programa de lexico mostrando gran parte de la gramatica asignada///* 
