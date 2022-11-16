@@ -110,7 +110,7 @@ public class Lexico {
 					estado = Integer.parseInt(matrizEstados[estado + 1][x]);
 					// Concatenar el caracter actual a lo que podria ser nuestro valor significativo
 					valor += actual;
-					// Al haber coincidido con un simbolo de la matriz, no es necesario seguir
+					// Al haber coincidido con un simbolo de la matriz, no es necesa1rio seguir
 					// comparando el caracter actual con los demas simbolos, esto para mejorar el
 					// rendimiento
 					break;

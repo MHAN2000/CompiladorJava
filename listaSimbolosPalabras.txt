@@ -1,0 +1,5 @@
+palabrasClave = { "function", "begin", "returning", "end", "number", "decimal", "string", "starting", "if",
+			"elseif", "else", "while", "for", "into", "do", "true", "false", "printing", "inputing", "fact", "pow", "absolute",
+			"minimal", "maximal", "range", "or", "and" };
+
+simbolos = {<", "=", "{", "]", "}", "+", ">", ")", ",", "|", "[", "/", "-", "*", "(", "&", "!",":", ";", "[a-z]", "[0-9]", ".", "'"},
